@@ -308,9 +308,9 @@
           Pagamento simples pelo Pix
         </div>
 
-        <a href="#comprar" class="button">
-          🛒 QUERO COMPRAR
-        </a>
+        <a href="#comprar" class="button" onclick="mostrarPassos(event)">
+  🛒 QUERO COMPRAR
+</a>
 
       </div>
     </section>
@@ -378,6 +378,18 @@
             "⚠️ Não foi possível copiar automaticamente.";
         });
     }
+function mostrarPassos(event) {
+    event.preventDefault();
+
+    document.getElementById("comprar").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    setTimeout(function() {
+        document.getElementById("mensagem").innerText =
+            "✅ Próximos passos: 1. Copie a chave Pix. 2. Faça o pagamento de R$ 19,90. 3. Após o pagamento, aguarde a confirmação e o envio do material.";
+    }, 500);
+}
   </script>
 
 </body>
